@@ -8,19 +8,17 @@ import { myLoadingSlice } from './loading/slice';
 import { myLastPageSlice } from './lastPage/slice';
 
 
-// const rootReducer = combineReducers({
-//     pictures: myPictureSlice.reduser,
-// });
+const rootReducer = combineReducers({
+    pictures: myPictureSlice.reducer,
+    page: myPageSlice.reducer,
+    largeImage: myLargeImageSlice.reducer,
+    showModal: myShowModalSlice.reducer,
+    searchQuerry: mySearchquerrySlice.reducer,
+    loading: myLoadingSlice.reducer,
+    lastPage: myLastPageSlice.reducer,
+});
 
 export const store = configureStore({
-    reducer: {
-        pictures: myPictureSlice.reducer, 
-        page: myPageSlice.reducer,
-        largeImage: myLargeImageSlice.reducer,
-        showModal: myShowModalSlice.reducer,
-        searchQuerry: mySearchquerrySlice.reducer,
-        loading: myLoadingSlice.reducer,
-        lastPage: myLastPageSlice.reducer,
-    }
+    reducer: rootReducer
 });
 
